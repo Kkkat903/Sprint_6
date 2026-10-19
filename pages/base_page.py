@@ -21,7 +21,7 @@ class BasePage:
 
     @allure.step("Дождаться кликабельности элемента {locator}")
     def wait_clickable(self, locator):
-        return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(locator))
+        return self.wait.until(EC.element_to_be_clickable(locator))
    
     @allure.step("Кликнуть по элементу {locator}")
     def click(self,locator):
@@ -49,3 +49,7 @@ class BasePage:
     @allure.step("Проверка содержания {text} в url")
     def wait_url_contains(self, text):
         self.wait.until(EC.url_contains(text))
+
+    @allure.step("Получение адреса страницы")
+    def get_current_url(self):
+        return self.driver.current_url

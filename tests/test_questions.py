@@ -21,7 +21,6 @@ class TestQuestionPage:
             (7, "Да, обязательно. Всем самокатов! И Москве, и Московской области."),
         ]
     )
-
     @allure.title("Проверка содержания текста ответов")
     @allure.description("На странице открываем вопрос и проверяем текст ответа")
     def test_answer_text(self,driver,number,expected_text):
